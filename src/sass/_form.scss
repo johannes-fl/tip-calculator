@@ -1,0 +1,73 @@
+.form {
+  padding: 1rem 0;
+  display: grid;
+
+  align-items: start;
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
+    justify-content: start;
+    justify-items: start;
+  }
+
+  &__label {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    color: $accent-gray-dark-1;
+    font-weight: 700;
+  }
+
+  &__label:not(:first-of-type) {
+    margin-top: 3rem;
+  }
+
+  &__input {
+    font-family: inherit;
+    position: relative;
+    background-color: $accent-gray-light-1;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+    text-align: right;
+    color: $color-primary-dark;
+    font-weight: 700;
+  }
+
+  &__input--custom {
+    width: 12rem;
+    font-weight: 700;
+    font-size: 2.4rem;
+    border-radius: 0.5rem;
+    border: none;
+    text-align: center;
+  }
+
+  &__input-container {
+    position: relative;
+
+    & > * {
+      width: 100%;
+    }
+
+    &--dollar::before,
+    &--people::before {
+      content: url(../img/icon-dollar.svg);
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 2rem;
+      z-index: 2;
+      transform: translateY(-50%);
+    }
+
+    &--people::before {
+      content: url(../img/icon-person.svg);
+    }
+  }
+
+  &__input {
+    font-size: 2.4rem;
+  }
+}

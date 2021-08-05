@@ -1,0 +1,28 @@
+.results {
+  background-color: $color-primary-dark;
+  border-radius: 1rem;
+  padding: 3rem;
+  color: $color-primary;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: min-content 1fr;
+  align-items: start;
+  grid-gap: 2rem;
+
+  &__label-amount {
+    color: $white;
+    font-size: 1.8rem;
+  }
+
+  &__result {
+    justify-self: end;
+    font-size: 3.5rem;
+    font-weight: 700;
+
+    &::before {
+      content: '$';
+      display: inline-block;
+    }
+  }
+}

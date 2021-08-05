@@ -1,0 +1,48 @@
+$color-primary: hsl(172, 67%, 45%);
+$color-primary-dark: hsl(183, 100%, 15%);
+$accent-gray-dark-2: hsl(186, 14%, 43%);
+$accent-gray-dark-1: hsl(184, 14%, 56%);
+$accent-gray-light-2: hsl(185, 41%, 84%);
+$accent-gray-light-1: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  background-color: $accent-gray-light-2;
+  min-height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  grid-gap: 5rem;
+  padding: 5rem;
+}
+
+.heading-1 {
+  text-transform: uppercase;
+  color: $accent-gray-dark-2;
+  letter-spacing: 3px;
+}
+
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(25rem, 1fr));
+  grid-gap: 3rem;
+
+  background-color: $white;
+  border-radius: 2rem;
+  padding: 3rem;
+}

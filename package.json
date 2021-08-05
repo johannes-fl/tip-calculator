@@ -1,0 +1,23 @@
+{
+  "name": "tip-calculator",
+  "version": "1.0.0",
+  "description": "A simple calculator to calculate tips with responsive design",
+  "default": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "conducto webDev / Johannes Fleischhut",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-beta.2",
+    "parcel": "^2.0.0-beta.2",
+    "sass": "1.26.10"
+  },
+  "dependencies": {
+    "core-js": "^3.16.0",
+    "fractional": "^1.0.0",
+    "regenerator-runtime": "^0.13.9"
+  }
+}

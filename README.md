@@ -46,7 +46,7 @@ Users should be able to:
 
 I used this challenge to improve my knowledge with CSS-Grid and to better understand the MVC concept. Even though it might be too much for this small application, I especially wanted to get a grip on the interactions of Model View and Controller :-)
 
-Happy, I only needed to media-queries to get the app working!
+Happy, I only needed two media-queries to get the app working!
 
 ## Author
 

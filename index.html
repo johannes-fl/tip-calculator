@@ -23,10 +23,10 @@
     <title>Frontend Mentor | Tip calculator app</title>
   </head>
   <body>
-    <div class="container">
+    <main class="container">
       <h1 class="heading-1">Spli<br />tter</h1>
 
-      <div class="calculator">
+      <article class="calculator">
         <div class="form">
           <label class="form__label" for="bill">Bill</label>
           <div class="form__input-container form__input-container--dollar">
@@ -40,14 +40,14 @@
           </div>
   
           <label for="buttons" class="form__label">Select Tip %</label>
-          <div id="buttons" class="form__buttons">
+          <fieldset id="buttons" class="form__buttons">
             <button class="btn">5%</button>
             <button class="btn">10%</button>
             <button class="btn">15%</button>
             <button class="btn">25%</button>
             <button class="btn">50%</button>
             <input type="number" class="btn btn--custom" placeholder="Custom" min="0" max="100" value="" /></input>
-          </div>
+          </fieldset>
   
           <label class="form__label" for="people">Number of People</label>
           <div class="form__input-container form__input-container--people">
@@ -75,7 +75,7 @@
           <p id="total" class="results__result">0.00</p>
           <button class="btn btn--reset">Reset</button>
         </div>
-      </div>
+      </article>
   
       <div class="attribution">
         Challenge by
@@ -94,7 +94,7 @@
             >Yo-Fly</a
           >.
       </div>
-    </div>
+    </main>
     
   </body>
 </html>

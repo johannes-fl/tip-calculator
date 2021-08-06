@@ -89,20 +89,20 @@ class View {
     this._buttonCustom.value = '';
   }
 
+  _renderErrorMarkup(el) {
+    const errorMessage = el.parentElement.querySelector('.error-message');
+    if (errorMessage) return;
+    const markup = `<div class="error-message">Can't be zero</div>`;
+
+    el.parentElement.insertAdjacentHTML('afterbegin', markup);
+    el.classList.add('form__input--error');
+  }
+
   renderError(res) {
     const { bill, people } = res;
 
-    const markup = `<div class="error-message">Can't be zero</div>`;
-
-    if (!bill) {
-      this._bill.parentElement.insertAdjacentHTML('afterbegin', markup);
-      this._bill.classList.add('form__input--error');
-    }
-
-    if (!people) {
-      this._people.parentElement.insertAdjacentHTML('afterbegin', markup);
-      this._people.classList.add('form__input--error');
-    }
+    !bill ? this._renderErrorMarkup(this._bill) : '';
+    !people ? this._renderErrorMarkup(this._people) : '';
   }
 }
 

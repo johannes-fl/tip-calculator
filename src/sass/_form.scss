@@ -1,19 +1,19 @@
 .form {
   padding: 1rem 0;
-  display: grid;
-
-  align-items: start;
 
   &__buttons {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1.5rem;
-    justify-content: start;
-    justify-items: start;
+    grid-gap: 1rem;
+
+    @media only screen and (max-width: $bp-large) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &__label {
     margin-bottom: 1rem;
+    display: block;
     font-size: 1.4rem;
     color: $accent-gray-dark-1;
     font-weight: 700;
@@ -29,19 +29,25 @@
     background-color: $accent-gray-light-1;
     border: none;
     border-radius: 0.5rem;
-    padding: 0.8rem;
+    padding: 0.6rem;
     text-align: right;
     color: $color-primary-dark;
     font-weight: 700;
-  }
+    border: 2px solid transparent;
+    cursor: pointer;
 
-  &__input--custom {
-    width: 12rem;
-    font-weight: 700;
-    font-size: 2.4rem;
-    border-radius: 0.5rem;
-    border: none;
-    text-align: center;
+    &::placeholder {
+      color: $accent-gray-dark-1;
+    }
+
+    &:focus {
+      outline: none;
+      border: 2px solid $color-primary;
+    }
+
+    &--error {
+      border: 2px solid $color-error;
+    }
   }
 
   &__input-container {
@@ -70,4 +76,12 @@
   &__input {
     font-size: 2.4rem;
   }
+}
+
+// Remove Arrows in Number Input
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

@@ -5,6 +5,10 @@ $accent-gray-dark-1: hsl(184, 14%, 56%);
 $accent-gray-light-2: hsl(185, 41%, 84%);
 $accent-gray-light-1: hsl(189, 41%, 97%);
 $white: hsl(0, 0%, 100%);
+$color-error: hsl(11, 52%, 62%);
+
+$bp-large: 56.25em; // 900px
+$bp-medium: 37.5em; // 600px
 
 *,
 *::before,
@@ -17,32 +21,78 @@ $white: hsl(0, 0%, 100%);
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 50%;
+  }
 }
 
 body {
   font-family: 'Space Mono', monospace;
   background-color: $accent-gray-light-2;
   min-height: 100vh;
+
   display: grid;
   justify-content: center;
   align-content: center;
   justify-items: center;
+}
+
+.container {
+  width: min(100%, 90rem);
+
+  display: grid;
+  align-items: end;
+  justify-items: center;
   grid-gap: 5rem;
-  padding: 5rem;
+  margin: 5rem 0;
 }
 
 .heading-1 {
+  font-size: 3rem;
   text-transform: uppercase;
   color: $accent-gray-dark-2;
-  letter-spacing: 3px;
+  letter-spacing: 8px;
+}
+
+a {
+  &:link,
+  &:visited {
+    color: $color-primary-dark;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
+}
+
+.error-message {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: $color-error;
+  position: absolute;
+  top: -3rem;
+  text-align: right;
 }
 
 .calculator {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(25rem, 1fr));
-  grid-gap: 3rem;
-
   background-color: $white;
   border-radius: 2rem;
   padding: 3rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 3rem;
+
+  @media only screen and (max-width: $bp-large) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.attribution {
+  padding: 0.8rem;
+  font-size: 1.3rem;
+  color: $accent-gray-dark-1;
 }

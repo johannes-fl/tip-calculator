@@ -5,10 +5,10 @@
   color: $color-primary;
 
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr max-content;
   grid-template-rows: min-content 1fr;
+  grid-gap: 4rem;
   align-items: start;
-  grid-gap: 2rem;
 
   &__label-amount {
     color: $white;
@@ -16,9 +16,13 @@
   }
 
   &__result {
-    justify-self: end;
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 700;
+    line-height: 1.2;
+    min-width: 18rem;
+    text-align: right;
+
+    justify-self: end;
 
     &::before {
       content: '$';

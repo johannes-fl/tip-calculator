@@ -23,78 +23,77 @@
     <title>Frontend Mentor | Tip calculator app</title>
   </head>
   <body>
-    <h1 class="heading-1">Spli<br />tter</h1>
+    <div class="container">
+      <h1 class="heading-1">Spli<br />tter</h1>
 
-    <div class="calculator">
-      <div class="form">
-        <label class="form__label" for="bill">Bill</label>
-        <div class="form__input-container form__input-container--dollar">
-          <input
-            class="form__input"
-            type="text"
-            placeholder="142.55"
-            name="bill"
-            id="bill"
-          />
+      <div class="calculator">
+        <div class="form">
+          <label class="form__label" for="bill">Bill</label>
+          <div class="form__input-container form__input-container--dollar">
+            <input
+              class="form__input"
+              type="text"
+              placeholder="0"
+              name="bill"
+              id="bill"
+            />
+          </div>
+  
+          <label for="buttons" class="form__label">Select Tip %</label>
+          <div id="buttons" class="form__buttons">
+            <button class="btn">5%</button>
+            <button class="btn">10%</button>
+            <button class="btn">15%</button>
+            <button class="btn">25%</button>
+            <button class="btn">50%</button>
+            <input type="number" class="btn btn--custom" placeholder="Custom" min="0" max="100" value="" /></input>
+          </div>
+  
+          <label class="form__label" for="people">Number of People</label>
+          <div class="form__input-container form__input-container--people">
+            <input
+              class="form__input form__input--people"
+              id="people"
+              type="number"
+              min="0"
+              max="100"
+              placeholder="0"
+            />
+          </div>
         </div>
-
-        <label for="buttons" class="form__label">Select Tip %</label>
-        <div id="buttons" class="form__buttons">
-          <button id="btn-5" class="btn">5%</button>
-          <button id="btn-10" class="btn">10%</button>
-          <button id="btn-15" class="btn">15%</button>
-          <button id="btn-25" class="btn">25%</button>
-          <button id="btn-50" class="btn">50%</button>
-          <input
-            class="form__input form__input--custom"
-            type="text"
-            placeholder="Custom"
-            id="custom"
-          />
-        </div>
-
-        <label class="form__label" for="people">Number of People</label>
-        <div class="form__input-container form__input-container--people">
-          <input
-            class="form__input form__input--people"
-            id="people"
-            type="number"
-            min="0"
-            max="100"
-          />
+        <div class="results">
+          <div class="results__label">
+            <p class="results__label-amount">Tip Amount</p>
+            <p class="results__sublabel">/ person</p>
+          </div>
+          <p id="tip-amount" class="results__result">0.00</p>
+          <div class="results__label">
+            <p class="results__label-amount">Total</p>
+            <p class="results__sublabel">/ person</p>
+          </div>
+          <p id="total" class="results__result">0.00</p>
+          <button class="btn btn--reset">Reset</button>
         </div>
       </div>
-      <div class="results">
-        <div class="results__label">
-          <p class="results__label-amount">Tip Amount</p>
-          <p class="results__sublabel">/ person</p>
-        </div>
-        <p class="results__result">4.27</p>
-        <div class="results__label">
-          <p class="results__label-amount">Total</p>
-          <p class="results__sublabel">/ person</p>
-        </div>
-        <p class="results__result">32.79</p>
-        <button class="btn btn--reset">Reset</button>
+  
+      <div class="attribution">
+        Challenge by
+          <a
+            href="https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX"
+            target="_blank"
+            rel="“noopener"
+            noreferrer“
+            >Frontend Mentor</a
+          >. Coded by
+          <a
+            href="https://www.conducto.de"
+            target="_blank"
+            rel="“noopener"
+            noreferrer“
+            >Yo-Fly</a
+          >.
       </div>
     </div>
-
-    <div class="attribution">
-      Challenge by
-      <a
-        href="https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX"
-        target="_blank"
-        rel="“noopener"
-        noreferrer“
-        >Frontend Mentor</a
-      >. Coded by
-      <a
-        href="https://www.conducto.de"
-        target="_blank"
-        rel="“noopener"
-        noreferrer“
-        >conducto webDev / Johannes Fleischhut</a
-      >.
-    </div>
+    
   </body>
 </html>

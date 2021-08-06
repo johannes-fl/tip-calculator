@@ -10,19 +10,39 @@ class View {
   }
 
   _markActive(btn) {
-    this._buttons.querySelectorAll('.btn').forEach(btn => {
-      btn.classList.remove('btn--active');
-    });
-
     btn.classList.add('btn--active');
   }
 
-  addHandlerClick(handler) {
+  _unmarkButtons() {
+    this._buttons.querySelectorAll('.btn').forEach(btn => {
+      btn.classList.remove('btn--active');
+    });
+  }
+
+  removeError(el) {
+    const errorMessage = el.parentElement.querySelector('.error-message');
+
+    if (errorMessage) {
+      errorMessage.remove();
+      el.classList.remove('form__input--error');
+    }
+  }
+
+  addHandlerInput(handler) {
+    [this._bill, this._people].forEach(el =>
+      el.addEventListener('focus', e => {
+        handler(e.target);
+      })
+    );
+  }
+
+  addHandlerButton(handler) {
     this._buttons.addEventListener('click', e => {
       const btn = e.target.closest('.btn');
       if (!btn) return;
       if (btn.classList.contains('btn--custom')) return;
 
+      this._unmarkButtons();
       this._markActive(btn);
 
       handler(btn);
@@ -32,6 +52,8 @@ class View {
   addHandlerChange(handler) {
     this._buttonCustom.addEventListener('change', e => {
       const btn = e.target.closest('.btn');
+      this._unmarkButtons();
+
       handler(btn);
     });
   }
@@ -65,6 +87,22 @@ class View {
     this._bill.value = '';
     this._people.value = '';
     this._buttonCustom.value = '';
+  }
+
+  renderError(res) {
+    const { bill, people } = res;
+
+    const markup = `<div class="error-message">Can't be zero</div>`;
+
+    if (!bill) {
+      this._bill.parentElement.insertAdjacentHTML('afterbegin', markup);
+      this._bill.classList.add('form__input--error');
+    }
+
+    if (!people) {
+      this._people.parentElement.insertAdjacentHTML('afterbegin', markup);
+      this._people.classList.add('form__input--error');
+    }
   }
 }
 

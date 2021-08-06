@@ -8,33 +8,38 @@ if (module.hot) {
   module.hot.accept();
 }
 
-const controlClick = function (btn) {
+const controlRender = function (btn) {
   const values = view.getValues(btn);
-
   model.updateState(values);
-
   const results = model.calculate();
+
+  if (!results.people || !results.bill) return view.renderError(results);
+
   view.renderResults(results);
 };
 
-const controlChange = function (btnCustom) {
-  const values = view.getValues(btnCustom);
-  model.updateState(values);
+const controlClick = function (btn) {
+  controlRender(btn);
+};
 
-  const results = model.calculate();
-  view.renderResults(results);
+const controlChange = function (btnCustom) {
+  controlRender(btnCustom);
 };
 
 const controlReset = function () {
   const resetValues = model.resetState();
-  console.log(resetValues);
   view.renderResults(resetValues, true);
 };
 
+const controlInput = function (input) {
+  view.removeError(input);
+};
+
 const init = function () {
-  view.addHandlerClick(controlClick);
+  view.addHandlerButton(controlClick);
   view.addHandlerChange(controlChange);
   view.addHandlerReset(controlReset);
+  view.addHandlerInput(controlInput);
 };
 
 init();

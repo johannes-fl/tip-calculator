@@ -1,9 +1,9 @@
 export const state = {
-  bill: 0,
-  percentage: 0,
-  people: 0,
-  tipAmount: 0,
-  totalAmount: 0
+  bill: '',
+  percentage: '',
+  people: '',
+  tipAmount: '0.00',
+  totalAmount: '0.00'
 };
 
 export const updateState = function (data) {
@@ -13,9 +13,9 @@ export const updateState = function (data) {
 };
 
 export const resetState = function () {
-  state.bill = 0;
-  state.percentage = 0;
-  state.people = 0;
+  state.bill = '';
+  state.percentage = '';
+  state.people = '';
   state.tipAmount = '0.00';
   state.totalAmount = '0.00';
 

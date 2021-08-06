@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Solution URL](https://www.frontendmentor.io/solutions/tip-calculator-with-cssgrid-and-vanilla-js-and-mvc-concept-7bMNU-g3I)
 - Live Site URL: [Tip Calculator App](https://tip-calculator-yo-fly.netlify.app/)
 
 ## My process

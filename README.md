@@ -30,7 +30,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://tip-calculator-yo-fly.netlify.app/)
+- Live Site URL: [Tip Calculator App](https://tip-calculator-yo-fly.netlify.app/)
 
 ## My process
 

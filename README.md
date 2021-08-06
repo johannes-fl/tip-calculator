@@ -25,7 +25,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Tip Calculator preview](./screenshot.png)
 
 ### Links
 
